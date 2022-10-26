@@ -1,0 +1,13 @@
+@use "@carbon/react";
+@use "@carbon/styles";
+@use "@carbon/layout";
+
+.signup-layout {
+  max-width: 600px;
+  margin: auto;
+  margin-top: layout.$spacing-13;
+}
+
+.homepage-layout {
+  margin-top: layout.$spacing-13;
+}
