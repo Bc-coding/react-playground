@@ -1,8 +1,7 @@
-import React from "react";
-import { useParams } from "react-router";
-import AddPostModal from "../../components/AddPostModal/AddPostModal";
+import { useRouter } from "next/router";
+// import AddPostModal from "../../components/AddPostModal/AddPostModal";
 import { gql, useQuery } from "@apollo/client";
-import Post from "../../components/Post/Post";
+import Post from "../../components/post/post";
 
 const GET_PROFILE = gql`
   query GetProfile($userId: ID!) {
@@ -26,15 +25,14 @@ const GET_PROFILE = gql`
   }
 `;
 
-export default function Profile() {
-  const { id } = useParams();
-
+export default function Profile({ id }) {
   const { data, error, loading } = useQuery(GET_PROFILE, {
     variables: {
-      userId: id,
+      userId: Number(id),
     },
   });
-  // console.log(data, error, loading);
+
+  console.log(data, error, loading);
 
   if (error) return <div>Error page</div>;
 
@@ -55,7 +53,7 @@ export default function Profile() {
           <h1>{profile.user.name}</h1>
           <p>{profile.bio}</p>
         </div>
-        <div>{profile.isMyProfile ? <AddPostModal /> : null}</div>
+        {/* <div>{profile.isMyProfile ? <AddPostModal /> : null}</div> */}
       </div>
       <div>
         {profile.user.posts.map((post) => {

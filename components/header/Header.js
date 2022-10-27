@@ -29,7 +29,7 @@ const TutorialHeader = () => (
           Playground
         </HeaderName>
         <HeaderNavigation aria-label="Carbon Tutorial">
-          <HeaderMenuItem href="/posts">Posts</HeaderMenuItem>
+          <HeaderMenuItem href="/profile">Posts</HeaderMenuItem>
           <HeaderMenuItem href="/textEditor">Text Editor</HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -39,7 +39,7 @@ const TutorialHeader = () => (
         >
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/posts">Posts</HeaderMenuItem>
+              <HeaderMenuItem href="/profile">Posts</HeaderMenuItem>
               <HeaderMenuItem href="/textEditor">Text Editor</HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>

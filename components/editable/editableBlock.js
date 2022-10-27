@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ContentEditable from "react-contenteditable";
 import SelectMenu from "./selectMenu";
 import { setCaretToEnd } from "../../utils/helper";
+import c from "classnames";
+import styles from "./editableBlock.module.scss";
 
 const getCaretCoordinates = () => {
   let x, y;
@@ -130,7 +132,7 @@ export default class editableBlock extends Component {
           />
         )}
         <ContentEditable
-          className="Block"
+          className={styles["block"]}
           innerRef={this.contentEditable}
           html={this.state.html}
           tagName={this.state.tag}
