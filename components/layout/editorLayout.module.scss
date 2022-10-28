@@ -1,0 +1,7 @@
+@use "@carbon/layout";
+
+.editor-layout {
+  max-width: 800px;
+  margin: auto;
+  margin-top: layout.$spacing-09;
+}

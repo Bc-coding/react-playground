@@ -24,6 +24,7 @@ export default class editableBlock extends Component {
   constructor(props) {
     super(props);
     this.contentEditable = React.createRef();
+
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onKeyDownHandler = this.onKeyDownHandler.bind(this);
     this.onKeyUpHandler = this.onKeyUpHandler.bind(this);
@@ -43,11 +44,15 @@ export default class editableBlock extends Component {
       },
     };
   }
+
   componentDidMount() {
     this.setState({
       html: this.props.html,
       tag: this.props.tag,
     });
+
+    // this.contentEditable.current.setAttribute("data-test", "hi");
+    // console.log(this.contentEditable);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -61,6 +66,11 @@ export default class editableBlock extends Component {
         tag: this.state.tag,
       });
     }
+
+    this.contentEditable.current.setAttribute(
+      "placeholder",
+      "Type '/' for commands"
+    );
   }
 
   onChangeHandler(e) {

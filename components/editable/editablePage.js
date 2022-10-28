@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import { uid, setCaretToEnd } from "../../utils/helper";
 import styled from "styled-components";
 import EditableBlock from "./editableBlock";
+import EditorLayout from "../layout/editorLayout";
 
 const Wrapper = styled.section`
   padding: 4em;
   padding-top: 6rem;
-  background: papayawhip;
 `;
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
-  color: palevioletred;
+  margin-bottom: 20px;
 `;
 
 const initialBlock = {
@@ -72,20 +72,22 @@ export default class editablePage extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Click below to edit</Title>
-        {this.state.blocks.map((block, key) => {
-          return (
-            <EditableBlock
-              key={key}
-              id={block.id}
-              tag={block.tag}
-              html={block.html}
-              updatePage={this.updatePageHandler}
-              addBlock={this.addBlockHandler}
-              deleteBlock={this.deleteBlockHandler}
-            />
-          );
-        })}
+        <EditorLayout>
+          <Title>Click below to edit</Title>
+          {this.state.blocks.map((block, key) => {
+            return (
+              <EditableBlock
+                key={key}
+                id={block.id}
+                tag={block.tag}
+                html={block.html}
+                updatePage={this.updatePageHandler}
+                addBlock={this.addBlockHandler}
+                deleteBlock={this.deleteBlockHandler}
+              />
+            );
+          })}
+        </EditorLayout>
       </Wrapper>
     );
   }

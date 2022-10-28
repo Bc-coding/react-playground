@@ -1,11 +1,20 @@
 .block {
-  border: 1px solid lightgrey;
   border-radius: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  padding: 5px;
 }
+
 .block:hover {
-  border: 1px solid grey;
+  border-bottom: 1px dotted grey;
 }
+
 .block:focus {
-  border: 1px solid black;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+}
+
+.block[contentEditable="true"]:empty:not(:focus):before {
+  content: attr(placeholder);
+  color: grey;
 }

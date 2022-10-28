@@ -1,0 +1,7 @@
+@use "@carbon/layout";
+
+.signup-layout {
+  max-width: 600px;
+  margin: auto;
+  margin-top: layout.$spacing-13;
+}

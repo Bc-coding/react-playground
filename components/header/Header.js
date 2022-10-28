@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import {
   Header,
   HeaderContainer,
@@ -29,7 +29,7 @@ const TutorialHeader = () => (
           Playground
         </HeaderName>
         <HeaderNavigation aria-label="Carbon Tutorial">
-          <HeaderMenuItem href="/profile">Posts</HeaderMenuItem>
+          <HeaderMenuItem href="/posts">Posts</HeaderMenuItem>
           <HeaderMenuItem href="/textEditor">Text Editor</HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -39,7 +39,7 @@ const TutorialHeader = () => (
         >
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/profile">Posts</HeaderMenuItem>
+              <HeaderMenuItem href="/posts">Posts</HeaderMenuItem>
               <HeaderMenuItem href="/textEditor">Text Editor</HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>
@@ -55,7 +55,7 @@ const TutorialHeader = () => (
             aria-label="User Avatar"
             tooltipAlignment="center"
           >
-            <UserAvatar size={20} />
+            <UserAvatar size={20}></UserAvatar>
           </HeaderGlobalAction>
           <HeaderGlobalAction aria-label="App Switcher" tooltipAlignment="end">
             <Switcher size={20} />

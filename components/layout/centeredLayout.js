@@ -1,11 +1,5 @@
-// import styled from "styled-components";
+import styles from "./centeredLayout.module.scss";
 
-// const Wrapper = styled.main`
-//   max-width: 600px;
-//   margin: auto;
-//   margin-top: layout.$spacing-13;
-// `;
-
-export default function SignupLayout({ children }) {
-  return <main className="signup-layout">{children}</main>;
+export default function CenteredLayout({ children }) {
+  return <main className={styles["signup-layout"]}>{children}</main>;
 }
