@@ -6,7 +6,7 @@ import EditorLayout from "../layout/editorLayout";
 
 const Wrapper = styled.section`
   padding: 4em;
-  padding-top: 6rem;
+  padding-top: 1.5rem;
 `;
 
 const Title = styled.h1`
@@ -71,24 +71,28 @@ export default class editablePage extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <EditorLayout>
-          <Title>Click below to edit</Title>
-          {this.state.blocks.map((block, key) => {
-            return (
-              <EditableBlock
-                key={key}
-                id={block.id}
-                tag={block.tag}
-                html={block.html}
-                updatePage={this.updatePageHandler}
-                addBlock={this.addBlockHandler}
-                deleteBlock={this.deleteBlockHandler}
-              />
-            );
-          })}
-        </EditorLayout>
-      </Wrapper>
+      <>
+        <div
+          style={{ width: "100%", height: "100px", backgroundColor: "pink" }}
+        ></div>
+        <Wrapper>
+          <EditorLayout>
+            {this.state.blocks.map((block, key) => {
+              return (
+                <EditableBlock
+                  key={key}
+                  id={block.id}
+                  tag={block.tag}
+                  html={block.html}
+                  updatePage={this.updatePageHandler}
+                  addBlock={this.addBlockHandler}
+                  deleteBlock={this.deleteBlockHandler}
+                />
+              );
+            })}
+          </EditorLayout>
+        </Wrapper>
+      </>
     );
   }
 }

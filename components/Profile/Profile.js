@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 // import AddPostModal from "../../components/AddPostModal/AddPostModal";
 import { gql, useQuery } from "@apollo/client";
-import Post from "../../components/post/post";
+import Post from "../post/post";
 
 const GET_PROFILE = gql`
   query GetProfile($userId: ID!) {
@@ -41,7 +41,7 @@ export default function Profile({ id }) {
   const { profile } = data;
 
   return (
-    <div>
+    <>
       <div
         style={{
           marginBottom: "2rem",
@@ -71,6 +71,6 @@ export default function Profile({ id }) {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }

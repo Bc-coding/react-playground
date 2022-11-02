@@ -55,7 +55,9 @@ const TutorialHeader = () => (
             aria-label="User Avatar"
             tooltipAlignment="center"
           >
-            <UserAvatar size={20}></UserAvatar>
+            <Link href="/userProfile">
+              <UserAvatar size={20}></UserAvatar>
+            </Link>
           </HeaderGlobalAction>
           <HeaderGlobalAction aria-label="App Switcher" tooltipAlignment="end">
             <Switcher size={20} />
