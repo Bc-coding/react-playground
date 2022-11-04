@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-// import AddPostModal from "../../components/AddPostModal/AddPostModal";
+import AddPostModal from "../AddPostModal/AddPostModal";
 import { gql, useQuery } from "@apollo/client";
 import Post from "../post/post";
 
@@ -53,7 +52,7 @@ export default function Profile({ id }) {
           <h1>{profile.user.name}</h1>
           <p>{profile.bio}</p>
         </div>
-        {/* <div>{profile.isMyProfile ? <AddPostModal /> : null}</div> */}
+        <div>{profile.isMyProfile ? <AddPostModal /> : null}</div>
       </div>
       <div>
         {profile.user.posts.map((post) => {

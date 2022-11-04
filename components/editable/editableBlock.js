@@ -149,7 +149,7 @@ export default class editableBlock extends Component {
           onChange={this.onChangeHandler}
           onKeyDown={this.onKeyDownHandler}
           onKeyUp={this.onKeyUpHandler}
-        />{" "}
+        />
       </>
     );
   }
